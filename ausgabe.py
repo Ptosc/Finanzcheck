@@ -36,8 +36,8 @@ def render():
     ]
 
     zahlungsarten = [
-        "Bargeld 💵",
         "Karte 🏦",
+        "Bargeld 💵",
         "Onlinezahlung 💻",
         "Sonstiges 🌀"
     ]

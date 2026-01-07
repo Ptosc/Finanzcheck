@@ -216,7 +216,7 @@ def sidebar(df):
     
  
     # Eindeutige Labels: "Beschreibung (X €)"
-    options = [(idx, f" {row['Beschreibung']} {row['Betrag']} €") 
+    options = [(idx, f" {row['Beschreibung']} ({row['Betrag']}) €") 
             for idx, row in sorted_df.iterrows()]
 
     gewählter_index, _ = st.sidebar.selectbox(

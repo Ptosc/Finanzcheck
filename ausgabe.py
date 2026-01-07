@@ -3,17 +3,17 @@ import gspread
 from google.oauth2.service_account import Credentials
 from datetime import datetime
 
-# st.secrets["gcp_service_account"]
+
 
 @st.cache_resource
-def get_sheet(key_file):
+def get_sheet():
     scopes = [
         "https://www.googleapis.com/auth/spreadsheets",
         "https://www.googleapis.com/auth/drive"
     ]
 
-    creds = Credentials.from_service_account_file(
-        key_file,
+    creds = Credentials.from_service_account_info(
+        st.secrets["gcp_service_account"],
         scopes=scopes
     )
 
@@ -25,7 +25,7 @@ def render():
 
     st.title("Ausgabe eintragen")
 
-    sheet = get_sheet(key_file='/Users/paolotosciri/Downloads/sicherheitsschlüssel_streamlit_sheets.json')
+    sheet = get_sheet()
 
     kategorien = [
         "📚 Bildung & Entwicklung",

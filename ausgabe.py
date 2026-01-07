@@ -23,7 +23,7 @@ def get_sheet():
 
 def render():
 
-    st.title("Ausgabe eintragen")
+    st.title("✍️ Ausgabe eintragen")
 
     sheet = get_sheet()
 

@@ -285,13 +285,11 @@ def content():
 
     col1, col2, col3 = st.columns([1, 3, 1])
     with col2:
-        st.markdown(f"""
-    ### {ausgabe['Beschreibung'].iloc[0]} (für {ausgabe['Betrag'].iloc[0]} €)
+        datum = ausgabe['Zeitstempel'].iloc[0].strftime("%A, %d. %B %Y um %H:%M")
 
-    {st.session_state.markdown_text.format(
-        fall=fall
-    )}
-    """)
+        st.markdown(f'### {ausgabe['Beschreibung'].iloc[0]} ')
+        st.button(f'{ausgabe['Betrag'].iloc[0]} € am {datum} Uhr', width='content')
+        st.write(f'{st.session_state.markdown_text.format(fall=fall)}')
 
     st.markdown("---")
 

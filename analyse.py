@@ -114,7 +114,7 @@ def scentence_of_month(df):
     
     total_this_month = df['Betrag'].sum()
     single_expence = df.iloc[0]
-
+    # die teuerste kategorie ist 
     expence_per_category = (
         df.groupby('Kategorie', as_index=False)['Betrag']
           .sum()
@@ -480,7 +480,6 @@ def highlight_expenses(val):
 
 def render():
     df = load_data()
-
     tab1, tab2 = st.tabs(['Monat', 'Daten'])
 
     with tab1:

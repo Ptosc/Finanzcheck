@@ -8,6 +8,9 @@ def load_data():
     url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ8kVPJfrPObdWeHaXJLh2unLAkzEYdOQJqSEyLS3TxhObUmE5PBpm561_kPDBk1XKRcsH9sQsJClBw/pub?output=csv"
     df = pd.read_csv(url)
 
+    # betrag in Zahl umwandeln
+    df['Betrag'] = pd.to_numeric(df['Betrag'], errors="coerce")
+
     # Zeit in Datetime objekt umwandeln
     df["Zeitstempel"] = pd.to_datetime(df["Zeitstempel"], format="%d.%m.%Y %H:%M:%S")
 
